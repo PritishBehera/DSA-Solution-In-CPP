@@ -2,6 +2,7 @@
 using namespace std;
 int main(){
     int n;
+    cout<<"Enter s number:";
     cin>> n;
     for(int i=0;i<n;i++){
         for(int j=0;j<n+1;j++){
@@ -15,7 +16,7 @@ int main(){
     }
 }
 
-// Output: if n=4
+// Output: if n=4 
 // *****
 // *   *
 // *   *
