@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-int primes2toN(int n){
+void primes2toN(int n){
+    if(n==1){ cout<<"No primes N=1";}
     for(int i=2;i<=n;i++){
         int c=0;
         for(int j=1;j<=i;j++){
@@ -10,7 +11,7 @@ int primes2toN(int n){
             };
             
         }
-        if(c==2) cout<<i;
+        if(c==2) cout<<i<<",";
     }
 };
 int main(){
@@ -20,3 +21,6 @@ int main(){
     primes2toN(n);
     return 0;
 }
+// Output:
+// enter the range upto which you need to find the primes number:9
+// 2,3,5,7,
