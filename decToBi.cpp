@@ -12,12 +12,24 @@ void decToBi(long int n){
     string str(li.begin(),li.end());
     cout<<"Binary num is:"<<str;
 }
+void decToBi2(long int n){
+    int pow=1;
+    int bi=0;
+    while(n>0){
+        int rem = n%2;
+        bi+=rem*pow;
+        pow*=10;
+        n=n/2;
+    }
+    cout<<"\nBinary value:"<<bi;
+}
 
 int main(){
     long int n;
     cout<<"Enter a decimal num:";
     cin>>n;
     decToBi(n);
+    decToBi2(n);
     return 0;
 }
 // Output:
