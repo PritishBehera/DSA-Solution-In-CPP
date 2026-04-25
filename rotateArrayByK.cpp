@@ -1,24 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 void rotate(vector<int>& nums, int k) {
+        int s= nums.size();
+        k=s-k;
         while(k>0){
-            int j=0;
-            for(int i=0;i<nums.size();i++){
-                int f ;
-                if(j==(nums.size()-1)){
-                    j--;
-                }
-                if(j==0){
-                    f = nums[i];
-                }
-                if(j+1==(nums.size()-1)){
-                    nums[j+1]=f;
-                }
-                nums[j]=nums[j+1];
-                j++;
+            int f=nums[0];
+            for(int i=1;i<s;i++){
+                nums[i-1]=nums[i];
             }
+            nums[s-1]=f;
             k--;
         }
+        cout<<"final values are:";
         for(auto it:nums){
             cout<<it<<" ";
         }
@@ -26,9 +19,9 @@ void rotate(vector<int>& nums, int k) {
 int main(){
     vector<int> nums;
     int n;
-    cout<<"enter the no. of values of array";
+    cout<<"enter the no. of values of array:";
     cin>>n;
-    cout<<"enter values;"
+    cout<<"enter values:";
     while(n>0){
         int x=0;
         cin>>x;
@@ -36,7 +29,7 @@ int main(){
     n--;
     }
     int k;
-    cout<<"enter the rotate times";
+    cout<<"enter the rotate times:";
     cin>>k;
     rotate(nums,k);
     return 0;
