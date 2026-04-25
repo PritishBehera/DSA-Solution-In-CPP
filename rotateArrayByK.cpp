@@ -34,3 +34,8 @@ int main(){
     rotate(nums,k);
     return 0;
 }
+// Output:
+// enter the no. of values of array:5
+// enter values:1 2 3 4 5
+// enter the rotate times:3
+// final values are:3 4 5 1 2
