@@ -10,7 +10,7 @@ void bubbleSort(int arr[],int n){
                 isSwap=true;
             }
         }
-        if(isSwap){
+        if(!isSwap){
             cout<<"Already sorted";
             break;
         }
