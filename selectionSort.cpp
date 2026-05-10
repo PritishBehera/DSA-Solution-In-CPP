@@ -2,7 +2,6 @@
 using namespace std;
 
 void selectionSort(int arr[],int n){
-    int k=0;
     for(int i=0;i<n;i++){
         int midx=i;
         for(int j=i;j<n;j++){
@@ -10,8 +9,7 @@ void selectionSort(int arr[],int n){
                 midx=j;
             }
         }
-        swap(arr[k],arr[midx]);
-        k++;
+        swap(arr[i],arr[midx]);
     }
     cout<<"here is the sorted array:\n";
     for(int i=0;i<n;i++){
