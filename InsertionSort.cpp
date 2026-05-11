@@ -3,14 +3,11 @@ using namespace std;
 void insertionSort(int arr[],int n){
     for(int i=1;i<n;i++){
         int curr=i;
-        bool isSwap=false;
         for(int j=i-1;j>=0;j--){
             if(arr[j]>arr[curr]){// change > to < for descending order array
                 swap(arr[j],arr[curr]);
-                isSwap=true;
             }
             curr=j;
-            if(!isSwap) break;
         }
     }
     cout<<"here is the sorted array\n";
