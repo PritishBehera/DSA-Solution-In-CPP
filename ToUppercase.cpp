@@ -2,10 +2,8 @@
 using namespace std;
 
 void toUppercase(char word[]){
-    for(int i=0;i<strlen(word);i++){
-        if(word[i]>='A'&&word[i]<='Z'){
-            continue;
-        }else{
+    for(int i=0;word[i]!='\0';i++){
+        if(word[i]>='a'&&word[i]<='z'){
             word[i]=word[i]-'a'+'A';
         }
     }
