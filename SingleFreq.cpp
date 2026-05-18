@@ -12,6 +12,13 @@ int single(vector<int> &nums,int n){
     }
     return 0;
 }
+int method2(vector<int> &nums,int n){
+    int a = 0;
+    for(int i=0;i<n;i++){
+        a=a^nums[i];
+    }
+    return a;
+}
 int main(){
     int s;
     cout<<"enter the size of array\n";
