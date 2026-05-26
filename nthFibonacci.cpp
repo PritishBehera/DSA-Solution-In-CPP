@@ -10,6 +10,12 @@ void print(int n,int i,int j,int c){
     print(n,j,i+j,c);
     return ;
 }
+int print(int n){//call it to find the exact number at nth place if the fibonacci series
+    if(n== 0||n==1){
+        return n;
+    }
+    return print(n-1) + print(n-2);
+}
 int main(){
     int n,i=0,j=1;
     cout<<"enter nth number of fibonacci series:";
