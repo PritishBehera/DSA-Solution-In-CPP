@@ -3,12 +3,12 @@ using namespace std;
 
 void print(int n,int i,int j,int c){
     if(c==n-2){
-        return ;
+        return;
     }
     cout<<i+j<<"\n";
     c++;
     print(n,j,i+j,c);
-    
+    return ;
 }
 int main(){
     int n,i=0,j=1;
