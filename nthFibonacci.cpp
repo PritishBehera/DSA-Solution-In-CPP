@@ -18,10 +18,10 @@ int main(){
     print(n,0,1,0);
     return 0;
 }
-Output:
-enter nth number of fibonacci series:5
-0
-1
-1
-2
-3
+// Output:
+// enter nth number of fibonacci series:5
+// 0
+// 1
+// 1
+// 2
+// 3
