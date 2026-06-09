@@ -11,7 +11,7 @@ void subsetPrint(string str,string subset){
     //karma
     char ch = str.at(0);
     //recurse call
-    subsetPrint(str.substr(1,str.size()-1),subset+=ch);
+    subsetPrint(str.substr(1,str.size()-1),subset+ch);
     subsetPrint(str.substr(1,str.size()-1),subset);
 }
 int main(){
