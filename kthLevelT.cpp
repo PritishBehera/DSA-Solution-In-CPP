@@ -82,23 +82,23 @@ void kthLevel(Node*root,int k){
         }
     }
 }
-void kthLevel1(Node* root, int currLevel, int k){
+void kthLevel1(Node* root, int level, int k){//recursive way
     if(root == NULL)
         return;
 
-    if(currLevel == k){
+    if(level == k){
         cout << root->data << " ";
         return;
     }
 
-    kthLevel1(root->left, currLevel + 1, k);
-    kthLevel1(root->right, currLevel + 1, k);
+    kthLevel1(root->left, level + 1, k);
+    kthLevel1(root->right, level + 1, k);
 }
 int main(){
     vector<int> nodes={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
     Node* root = binaryTrees(nodes);
     levelOrder(root);
-    int k=2;//level to print
+    int k=3;//level to print
     cout<<"nodes at level:"<<k<<" is \n";
     // kthLevel(root,k);
     kthLevel1(root,1,k);
