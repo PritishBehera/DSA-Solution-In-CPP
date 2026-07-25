@@ -61,22 +61,24 @@ void levelOrder(Node* root){//traversal(BFS)
     }
 }
 void kthLevel(Node*root,int k){
+    if(root==NULL) return;
     queue<pair<Node*,int>> qu;
-    int c=1;
-    qu.push({root,c});
+    qu.push({root,1});
     while(!qu.empty()){
         Node* curr= qu.front().first;
-        int co= qu.front().second;
+        int level= qu.front().second;
         qu.pop();
         //logic
-        if(co == k){
+
+        if(level == k){
             cout<<curr->data<<" ";
         }
+        if(level > k) continue;
         if(curr->left!=NULL){
-            qu.push({curr->left,co+1});
+            qu.push({curr->left,level+1});
         }
         if(curr->right!=NULL){
-            qu.push({curr->right,co+1});
+            qu.push({curr->right,level+1});
         }
     }
 }
