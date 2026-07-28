@@ -76,7 +76,7 @@ bool root2node(Node*root, int n, vector<int>&path){
     path.pop_back();
     return false;
 }
-int lca(Node* root,int n1, int n2){
+int lca(Node* root,int n1, int n2){//space comp. = O(n), time comp. = O(n)
     vector<int> path1;
     vector<int> path2;
     root2node(root,n1,path1);
@@ -90,10 +90,25 @@ int lca(Node* root,int n1, int n2){
     }
     return lca;
 }
+Node* lca2(Node*root, int&n1, int&n2){//space comp. = O(h), time comp. = O(n)
+    if(root==NULL){
+        return NULL;
+    }
+    if(root->data==n1 || root->data==n2){
+        return root;
+    }
+    Node* leftLca= lca2(root->left,n1,n2);
+    Node* rightLca= lca2(root->right,n1,n2);
+    if(leftLca!=NULL && rightLca!=NULL){
+        return root;
+    }
+    return (leftLca==NULL)?rightLca:leftLca;
+}
 int main(){
     vector<int> nodes={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
     Node* root = binaryTrees(nodes);
     levelOrder(root);
-    int n1=4,n2=6;
-    cout<<"for node "<<n1<<" and "<<n2<<", lowest common ancestor is: "<<lca(root,n1,n2);
+    int n1=4,n2=5;
+    Node* ptr =lca2(root,n1,n2);
+    cout<<"for node "<<n1<<" and "<<n2<<", lowest common ancestor is: "<<ptr->data;
 }
