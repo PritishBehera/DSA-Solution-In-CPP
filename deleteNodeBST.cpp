@@ -116,7 +116,7 @@ int main(){
     Node* root = buildBST(arr,n);
     levelOrder(root);
     deleteNode(root,3);
-    cout<<"after deleting the node BST tree will be:";
+    cout<<"after deleting the node, BST will be:";
     levelOrder(root);
     return 0;
 }
