@@ -67,14 +67,7 @@ void levelOrder(Node* root){//traversal(BFS)
         }
     }
 }
-int inorderSuccessor(Node* root){
-    while(root->left!=NULL){
-        root=root->left;
-    }
-    int va = root->data;
-    delete root;
-    return va;
-}
+
 Node* sortedArr2BST(vector<int>&vec,int st,int en){
     if(st>en){
         return NULL;

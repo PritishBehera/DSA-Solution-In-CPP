@@ -67,14 +67,7 @@ void levelOrder(Node* root){//traversal(BFS)
         }
     }
 }
-int inorderSuccessor(Node* root){
-    while(root->left!=NULL){
-        root=root->left;
-    }
-    int va = root->data;
-    delete root;
-    return va;
-}
+
 void root2Leaf(Node*root,vector<int>&vec){
     if(root==NULL){
         return;

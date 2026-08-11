@@ -67,14 +67,7 @@ void levelOrder(Node* root){//traversal(BFS)
         }
     }
 }
-int inorderSuccessor(Node* root){
-    while(root->left!=NULL){
-        root=root->left;
-    }
-    int va = root->data;
-    delete root;
-    return va;
-}
+
 bool validateBST(Node*root, Node* max, Node* min){
     if(root==NULL){
         return true;
