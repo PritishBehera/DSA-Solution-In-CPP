@@ -92,8 +92,8 @@ info* largestBST(Node* root){
     info* leftInfo = largestBST(root->left);
     info* rightInfo = largestBST(root->right);
 
-    int mx = max(root->data,max(leftInfo->max,rightInfo->max));
-    int mn = min(root->data,min(leftInfo->min,rightInfo->min));
+    int mx = max(leftInfo->max,root->data);
+    int mn = min(leftInfo->min,root->data);
     int sz = leftInfo->size + rightInfo->size + 1;
 
     if(root->data > leftInfo->max && root->data < rightInfo->min 
